@@ -29,6 +29,7 @@
                     <th>Jumlah KIA</th>
                     <th>Jumlah KTP</th>
                     <th>Penerbitan Akte</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,6 +42,14 @@
                         <td>{{ $data->jmlh_kia }}</td>
                         <td>{{ $data->jmlh_ktp }}</td>
                         <td>{{ $data->penerbitan_akte }}</td>
+                        <td>
+                            <form action="{{ route('rekapitulasi.destroy', $data->id_rekapitulasi) }}" method="POST"
+                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

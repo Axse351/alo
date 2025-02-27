@@ -3,11 +3,9 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-            target="_blank">
-            <img src="{{ asset('../assets/img/logo-ct-dark.png') }}" class="navbar-brand-img" width="26"
-                height="26" alt="main_logo">
-            <span class="ms-1 text-sm text-dark">Creative Tim</span>
+        <a class="navbar-brand px-4 py-3 m-0" href=" /" target="_blank">
+            <img src="{{ asset('../assets/img/capil.png') }}" class="navbar-brand-img" alt="main_logo">
+            <span class="ms-1 text-sm text-dark">Capil</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">
