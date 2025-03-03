@@ -3,10 +3,11 @@
     <div class="container-fluid py-2">
         <div class="row">
             <div class="ms-3">
-                <h3 class="mb-0 h4 font-weight-bolder">Dashboard</h3>
-                <p class="mb-4">
-                    Data Perusahaan Motor Jaya Jaya Jaya
-                </p>
+                <center>
+                    <h3 class="mb-0 h4 font-weight-bolder"> Rekapitulasi <br>
+                        Dinas kependudukan Dan Catatan Sipil Kota
+                        Cirebon</h3>
+                </center>
             </div>
             <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                 <div class="card">
