@@ -11,6 +11,11 @@
 <body>
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow" style="width: 350px;">
+            @if (session('alert'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('alert') }}
+                </div>
+            @endif
             <h2 class="text-center mb-4">Login</h2>
             <form action="{{ route('login') }}" method="POST">
                 @csrf
