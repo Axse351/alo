@@ -24,6 +24,15 @@
                     <span class="nav-link-text ms-1">Rekapitulasi</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link text-dark border-0 bg-transparent">
+                        <i class="material-symbols-rounded opacity-5">exit_to_app</i>
+                        <span class="nav-link-text ms-1">Logout</span>
+                    </button>
+                </form>
+            </li>
         </ul>
     </div>
 </aside>
