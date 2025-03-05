@@ -16,8 +16,30 @@ class RekapitulasiController extends Controller
     public function index()
     {
         $rekapitulasi = Rekapitulasi::all();
-        return view('rekapitulasi.index', compact('rekapitulasi'));
+        $totalRekap = Rekapitulasi::count();
+
+        // Ambil data jumlah pencatatan per bulan
+        $dataPerBulan = Rekapitulasi::selectRaw('MONTH(tanggal) as bulan, COUNT(*) as jumlah')
+            ->groupBy('bulan')
+            ->orderBy('bulan')
+            ->pluck('jumlah', 'bulan')
+            ->toArray();
+
+        // Daftar bulan dalam format singkat
+        $bulanLengkap = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+
+        // Inisialisasi array jumlah pencatatan per bulan dengan nilai default 0
+        $jumlahPerBulan = array_fill(0, 12, 0);
+
+        foreach ($dataPerBulan as $bulan => $jumlah) {
+            $jumlahPerBulan[$bulan - 1] = $jumlah; // Menyesuaikan indeks agar sesuai dengan array bulan
+        }
+
+        // Kirim variabel ke view
+        return view('rekapitulasi.index', compact('rekapitulasi', 'totalRekap', 'bulanLengkap', 'jumlahPerBulan'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.

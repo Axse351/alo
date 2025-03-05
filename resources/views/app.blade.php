@@ -5,7 +5,7 @@
             <div class="ms-3">
                 <center>
                     <h3 class="mb-0 h4 font-weight-bolder"> Rekapitulasi <br>
-                        Dinas kependudukan Dan Catatan Sipil Kota
+                        Dinas Kependudukan Dan Catatan Sipil Kota
                         Cirebon</h3>
                 </center>
             </div>
@@ -24,15 +24,53 @@
                         </div>
                     </div>
                     <hr class="dark horizontal my-0">
-                    <div class="card-footer p-2 ps-3">
+                    <div class="card-footer p-2 ps-3"></div>
+                </div>
+            </div>
+        </div>
 
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header p-3">
+                        <h6 class="mb-0">Pencatatan Per Bulan</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="rekapChart"></canvas>
                     </div>
                 </div>
             </div>
-
         </div>
 
 
         @include('layout.footer')
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var ctx = document.getElementById('rekapChart').getContext('2d');
+            var rekapChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {!! json_encode($bulanLengkap) !!}, // Label bulan dari controller
+                    datasets: [{
+                        label: 'Jumlah Pencatatan',
+                        data: {!! json_encode($jumlahPerBulan) !!}, // Data jumlah pencatatan
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 @endsection
