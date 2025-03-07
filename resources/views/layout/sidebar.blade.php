@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand px-4 py-3 m-0" href=" /" target="_blank">
             <img src="{{ asset('../assets/img/capil.png') }}" class="navbar-brand-img" alt="main_logo">
-            <span class="ms-1 text-sm text-dark">Capil</span>
+            <span class="ms-1 text-sm text-dark">PIAK</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">

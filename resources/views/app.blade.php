@@ -66,7 +66,10 @@
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1 // Menampilkan hanya angka bulat
+                            }
                         }
                     }
                 }
